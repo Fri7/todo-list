@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📝 我的待办清单</title>
+    <title>📝 我的待办清单-vibe Coding作业</title>
     <style>
         * {
             margin: 0;
@@ -233,7 +233,7 @@
         }
 
         .checkbox.checked::after {
-            content: '✓';
+            content: '�?;
             color: white;
             font-size: 14px;
             font-weight: bold;
@@ -392,22 +392,22 @@
         <div class="stats-card">
             <div class="stat-item">
                 <div class="stat-number" id="totalCount">0</div>
-                <div class="stat-label">总任务</div>
+                <div class="stat-label">总任�?/div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" id="pendingCount">0</div>
-                <div class="stat-label">待完成</div>
+                <div class="stat-label">待完�?/div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" id="completedCount">0</div>
-                <div class="stat-label">已完成</div>
+                <div class="stat-label">已完�?/div>
             </div>
         </div>
 
         <div class="input-section">
             <div class="input-row">
-                <input type="text" id="taskInput" placeholder="输入新任务..." maxlength="100">
-                <button id="addBtn" onclick="addTask()">➕ 添加</button>
+                <input type="text" id="taskInput" placeholder="输入新任�?.." maxlength="100">
+                <button id="addBtn" onclick="addTask()">�?添加</button>
             </div>
             <div class="select-row">
                 <select id="categorySelect">
@@ -425,21 +425,21 @@
 
         <div class="filter-tabs">
             <button class="filter-tab active" onclick="setFilter('all')">全部</button>
-            <button class="filter-tab" onclick="setFilter('pending')">待完成</button>
-            <button class="filter-tab" onclick="setFilter('completed')">已完成</button>
+            <button class="filter-tab" onclick="setFilter('pending')">待完�?/button>
+            <button class="filter-tab" onclick="setFilter('completed')">已完�?/button>
         </div>
 
         <div class="task-list" id="taskList">
             <div class="empty-state">
                 <div class="emoji">🌟</div>
-                <p>还没有任务，添加一个开始吧！</p>
+                <p>还没有任务，添加一个开始吧�?/p>
             </div>
         </div>
 
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%"></div>
         </div>
-        <div class="progress-text" id="progressText">完成进度：0%</div>
+        <div class="progress-text" id="progressText">完成进度�?%</div>
     </div>
 
     <script>
@@ -455,7 +455,7 @@
             renderTasks();
             updateStats();
             
-            // 回车键添加任务
+            // 回车键添加任�?
             document.getElementById('taskInput').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     addTask();
@@ -510,7 +510,7 @@
         }
 
         function deleteTask(id) {
-            if (confirm('确定要删除这个任务吗？')) {
+            if (confirm('确定要删除这个任务吗�?)) {
                 tasks = tasks.filter(t => t.id !== id);
                 saveTasks();
                 renderTasks();
@@ -550,9 +550,9 @@
 
         function getPriorityLabel(pri) {
             const labels = {
-                high: '高',
-                medium: '中',
-                low: '低'
+                high: '�?,
+                medium: '�?,
+                low: '�?
             };
             return labels[pri] || pri;
         }
@@ -562,8 +562,8 @@
             const filtered = getFilteredTasks();
 
             if (filtered.length === 0) {
-                let message = '还没有任务，添加一个开始吧！';
-                if (currentFilter === 'pending') message = '没有待完成的任务，太棒了！🎉';
+                let message = '还没有任务，添加一个开始吧�?;
+                if (currentFilter === 'pending') message = '没有待完成的任务，太棒了！�?;
                 if (currentFilter === 'completed') message = '还没有完成的任务哦～';
                 
                 listEl.innerHTML = `
@@ -582,10 +582,10 @@
                         <div class="task-text">${escapeHtml(task.text)}</div>
                         <div class="task-meta">
                             <span class="tag ${task.category}">${getCategoryLabel(task.category)}</span>
-                            <span class="priority ${task.priority}">${getPriorityLabel(task.priority)}优先级</span>
+                            <span class="priority ${task.priority}">${getPriorityLabel(task.priority)}优先�?/span>
                         </div>
                     </div>
-                    <button class="delete-btn" onclick="deleteTask(${task.id})">🗑️</button>
+                    <button class="delete-btn" onclick="deleteTask(${task.id})">🗑�?/button>
                 </div>
             `).join('');
         }
@@ -601,7 +601,7 @@
 
             const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
             document.getElementById('progressFill').style.width = percent + '%';
-            document.getElementById('progressText').textContent = `完成进度：${percent}%（${completed}/${total}）`;
+            document.getElementById('progressText').textContent = `完成进度�?{percent}%�?{completed}/${total}）`;
         }
 
         function escapeHtml(text) {
